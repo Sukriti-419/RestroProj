@@ -1,0 +1,16 @@
+<p>user-register works!</p>
+<p>User name is : {{name}}</p>
+
+<button (click)="updateName()">Click Me</button>
+<img [src] ="https://via.placeholder.com/150">
+<div *ngFor = "let employee of employees">
+    <div *ngIf="employee.isVisible">
+        
+
+    <p>Name:{{employee.name}}</p>
+    
+    <p>Age:{{employee.age}}</p>
+
+    <p>Salary:{{employee.salary}}</p>
+    <button (click)="toggleVisibility(employee)">Toggle Visibility</button>
+</div>
