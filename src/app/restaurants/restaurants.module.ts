@@ -12,6 +12,9 @@ import { ShowListComponent } from './show-list/show-list.component';
   imports: [
     CommonModule,
     RestaurantsRoutingModule
+  ],
+  exports:[
+    ShowListComponent
   ]
 })
 export class RestaurantsModule { }

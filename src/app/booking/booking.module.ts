@@ -12,6 +12,9 @@ import { TableBookingComponent } from './table-booking/table-booking.component';
   imports: [
     CommonModule,
     BookingRoutingModule
+  ],
+  exports:[
+    TableBookingComponent
   ]
 })
 export class BookingModule { }

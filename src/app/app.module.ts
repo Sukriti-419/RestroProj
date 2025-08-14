@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationModule } from './registration/registration.module'; // Importing the RegistrationModule
+import { BookingModule } from './booking/booking.module';
+import { RestaurantsModule } from './restaurants/restaurants.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { RegistrationModule } from './registration/registration.module'; // Impo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RegistrationModule  //--
+    RegistrationModule,  //--
+    BookingModule,
+    RestaurantsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
