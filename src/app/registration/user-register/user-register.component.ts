@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -9,6 +11,8 @@ import { Component } from '@angular/core';
 export class UserRegisterComponent {
   
   name: string = "";
+  imgUrl = "https://via.placeholder.com/150";
+  username : string = "";
 
   employees=[
     {name:"Ned",age: 25 ,salary:50000,isVisible:false},
