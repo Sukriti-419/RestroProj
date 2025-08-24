@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RegisterService } from '../services/register.service';
+import { NgForm } from '@angular/forms';
 
 
 
@@ -14,23 +16,35 @@ export class UserRegisterComponent {
   imgUrl = "https://via.placeholder.com/150";
   username : string = "";
 
+  user ={
+    name : '',
+    email : ''
+  };
+
   employees=[
     {name:"Ned",age: 25 ,salary:50000,isVisible:false},
     {name:"Sukriti",age: 30 ,salary:60000,isVisible:true},
     {name:"John",age: 35 ,salary:70000,isVisible:false},
   ]
 
-  constructor() {
-    this.name = "Sukriti";
+  constructor(private registerService: RegisterService) {
+    this.name = 'Sukriti01';
+    registerService.sample();
   }
 
   updateName():void{
     
     this.name = "Sukriti Das";
-  }
-  toggleVisibility(employee: any): void {
-    employee.isVisible = !employee.isVisible;
+    this.registerService.updateUser();
   }
 
+  toggleVisibility(index : number) : void{
+    this.employees[index].isVisible = !this.employees[index].isVisible;
+  }
+
+
+  onRegister(form: NgForm) {
+    console.log('Form Values:', form.value);
+  }
 }
 

@@ -1,21 +1,25 @@
-<p>user-register works!</p>
-<p>User name is : {{name}}</p>
+<div class="container">
 
-<button (click)="updateName()">Click Me</button>
-<!--<img [src] ="https://via.placeholder.com/150"> -->
-<div *ngFor = "let employee of employees">
-    <div *ngIf="employee.isVisible">
-        
+  <h1 style="text-align: center;">User Registration</h1>
 
-    <p>Name:{{employee.name}}</p>
+  <form class="registration-form" #userForm="ngForm" (ngSubmit)="onRegister(userForm)">
     
-    <p>Age:{{employee.age}}</p>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" maxlength="30" placeholder="Enter Name" ngModel />
+    <br/>
 
-    <p>Salary:{{employee.salary}}</p>
-    <button (click)="toggleVisibility(employee)">Toggle Visibility</button>
-</div>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" maxlength="30" placeholder="Enter Email" ngModel />
+    <br/>
 
-<div>
-   
+    <label for="phoneNumber">Phone Number</label>
+    <input id="phoneNumber" name="phoneNumber" type="text" maxlength="15" placeholder="Enter Phone Number" ngModel />
+    <br/>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" maxlength="30" placeholder="Enter Password" ngModel />
+    <br/>
     
+    <button type="submit">Register</button>
+  </form>
 </div>

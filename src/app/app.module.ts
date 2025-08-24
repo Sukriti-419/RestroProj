@@ -14,9 +14,8 @@ import { RestaurantsModule } from './restaurants/restaurants.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RegistrationModule,  //--
-    BookingModule,
-    RestaurantsModule
+    RegistrationModule,  
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
