@@ -1,35 +1,39 @@
-<p>table-booking works!</p>
+<div class="booking-container">
+  <div class="booking-form-section">
+    <form [formGroup]="bookingDetails" (ngSubmit)="onBook()" class="booking-form">
+      <h1 style="text-align: center;">Book a Table</h1>
+      <label>Email</label>
+      <input id="email" type="text" formControlName="email" />
+      <br/>
 
-<form [formGroup]="bookingDetails" (ngSubmit)="onBook()" class="booking-form">
-  <h1 style="text-align: center;">Book a Table</h1>
-  
-  <label>Email</label>
-  <input id="email" type="text" formControlName="email" />
-  <br/>
+      <label>Phone Number</label>
+      <input id="phoneNumber" formControlName="phoneNumber" type="text" />
+      <div *ngIf="bookingDetails.get('phoneNumber')?.invalid && bookingDetails.get('phoneNumber')?.touched" style="color: red;">
+        <span *ngIf="bookingDetails.get('phoneNumber')?.errors?.['required']">Phone number is required.</span>
+        <span *ngIf="bookingDetails.get('phoneNumber')?.errors?.['pattern']">Enter a valid 10-digit phone number (cannot start with 0).</span>
+      </div>
+      <br/>
 
-  <label>Phone Number</label>
-  <input id="phoneNumber" formControlName="phoneNumber" type="text" maxlength="10" minlength="10" pattern="^[1-9][0-9]{9}$" required />
-  <div *ngIf="bookingDetails.get('phoneNumber')?.invalid && bookingDetails.get('phoneNumber')?.touched" style="color: red;">
-    <span *ngIf="bookingDetails.get('phoneNumber')?.errors?.['required']">Phone number is required.</span>
-    <span *ngIf="bookingDetails.get('phoneNumber')?.errors?.['pattern']">Enter a valid 10-digit phone number (cannot start with 0).</span>
+      <label>Restaurant Name</label>
+      <input id="restaurant" type="text" formControlName="restaurantName" />
+      <br/>
+
+      <label>Booking Date</label>
+      <input id="bdate" type="date" formControlName="bookingDate" />
+      <br/>
+
+      <label>Booking Time</label>
+      <input id="btime" type="time" formControlName="bookingTime" />
+      <br/>
+
+      <label>No. Of People</label>
+      <input id="headcount" type="number" formControlName="headCount" />
+      <br/>
+
+      <button type="submit" [disabled]="bookingDetails.invalid">Book</button>
+    </form>
   </div>
-  <br/>
-
-  <label>Restaurant Name</label>
-  <input id="restaurant" type="text" formControlName="restaurantName" />
-  <br/>
-
-  <label>Booking Date</label>
-  <input id="bdate" type="date" formControlName="bookingDate" />
-  <br/>
-
-  <label>Booking Time</label>
-  <input id="btime" type="time" formControlName="bookingTime" />
-  <br/>
-
-  <label>No. Of People</label>
-  <input id="headcount" type="number" formControlName="headCount" />
-  <br/>
-
-  <button type="submit" [disabled]="bookingDetails.invalid">Book</button>
-</form>
+  <div class="booking-image-section">
+   <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Restaurant" />
+  </div>
+</div>
