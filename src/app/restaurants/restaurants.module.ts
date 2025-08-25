@@ -3,18 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { RestaurantsRoutingModule } from './restaurants-routing.module';
 import { ShowListComponent } from './show-list/show-list.component';
+import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 
 
 @NgModule({
   declarations: [
-    ShowListComponent
+    ShowListComponent,
+    RestaurantListComponent
   ],
   imports: [
     CommonModule,
     RestaurantsRoutingModule
   ],
   exports:[
-    ShowListComponent
+     RestaurantListComponent
   ]
 })
 export class RestaurantsModule { }

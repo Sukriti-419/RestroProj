@@ -15,6 +15,7 @@ export class UserRegisterComponent {
   name: string = "";
   imgUrl = "https://via.placeholder.com/150";
   username : string = "";
+  submitted: boolean = false;
 
   user ={
     name : '',
@@ -43,8 +44,10 @@ export class UserRegisterComponent {
   }
 
 
-  onRegister(form: NgForm) {
-    console.log('Form Values:', form.value);
-  }
+  onRegister(form: any) {
+      this.submitted = true;
+      alert('Sucessfully Register!');
+      form.resetForm();
+    }
 }
 

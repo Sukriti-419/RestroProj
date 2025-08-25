@@ -1,1 +1,10 @@
-<p>show-list works!</p>
+
+<div class="restaurant-list">
+  <div class="restaurant-card" *ngFor="let r of restaurants">
+    <img [src]="r.image" alt="{{ r.name }}" class="restaurant-img" />
+    <h3>{{ r.name }}</h3>
+    <p>{{ r.description }}</p>
+    <span class="restaurant-location">{{ r.location }}</span>
+    <button class="book-btn" (click)="bookRestaurant(r)">Book</button>
+  </div>
+</div>

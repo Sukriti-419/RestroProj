@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { BookingRequest } from '../models/booking-request';
 import { BookingService } from '../services/booking.service'; 
 
@@ -23,8 +24,20 @@ export class TableBookingComponent {
     headCount: new FormControl<number>(0, [Validators.required])
   });
 
-  constructor(private formBuilder: FormBuilder, private bookingService: BookingService) {}
+   constructor(
+    private formBuilder: FormBuilder,
+    private bookingService: BookingService,
+    private route: ActivatedRoute // <-- Inject ActivatedRoute
+  ) {}
 
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const restaurantName = params['restaurant'];
+      if (restaurantName) {
+        this.bookingDetails.patchValue({ restaurantName });
+      }
+    });
+  }
   onBook() {
     console.log('Booking Form Values:', this.bookingDetails.value);
     if (this.bookingDetails.valid) {

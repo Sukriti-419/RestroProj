@@ -1,12 +1,16 @@
-<h1>Navigate Components</h1>
-
-<nav>
-    <ul>
-        <li><a routerLink="/register">Registration</a></li>
-        <li><a routerLink="/booking">Booking</a></li>
-    </ul>
+<nav class="navbar">
+  <div class="navbar-logo">
+    <span class="logo-icon">🍽️</span>
+    <span class="logo-text">RestroEase</span>
+  </div>
+  <div class="navbar-links">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+     <a routerLink="/booking" routerLinkActive="active">Booking</a>
+    <a routerLink="/register" routerLinkActive="active">Register</a>
+     <a routerLink="/restaurants" routerLinkActive="active">Restaurants</a>
+  </div>
 </nav>
-
-
-
 <router-outlet></router-outlet>
+
+
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">

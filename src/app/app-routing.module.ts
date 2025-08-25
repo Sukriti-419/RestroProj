@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableBookingComponent } from './booking/table-booking/table-booking.component';
-import { UserRegisterComponent } from './registration/user-register/user-register.component';
+
+import { HomeComponent } from './home/home.component';
+import { RestaurantListComponent } from './restaurants/restaurant-list/restaurant-list.component';
 
 const routes: Routes = [
-
-
+  {
+    path: '', redirectTo: '/home', pathMatch: 'full' 
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'register',
-    component: UserRegisterComponent
+    loadChildren: () =>
+      import('./registration/registration.module').then(m => m.RegistrationModule)
   },
   {
     path: 'booking',
-    component: TableBookingComponent
-  }
+    loadChildren: () =>
+      import('./booking/booking.module').then(m => m.BookingModule)
+  },
+  { path: 'restaurants', component: RestaurantListComponent } 
 ];
 
 @NgModule({
