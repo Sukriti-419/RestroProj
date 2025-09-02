@@ -14,9 +14,7 @@
   flex: 1;
   background: #1a1a1a;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block; /* Change from flex to block for vertical stacking */
   padding: 0;
 }
 
@@ -103,4 +101,44 @@
   border-radius: 0;
   display: block;
   box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.booking-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-top: 24px;
+  max-width: 400px;
+}
+
+.booking-info p {
+  margin: 8px 0;
+}
+
+.cancel-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.cancel-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.booking-history-section {
+  max-width: 900px;
+  margin: 32px auto 0 auto;
+  padding: 24px 0;
+}
+
+.booking-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
 }

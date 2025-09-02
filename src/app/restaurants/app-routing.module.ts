@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { ShowListComponent } from './restaurants/show-list/show-list.component';
-
+import { HomeComponent } from '../home/home.component';
+import { ShowListComponent } from './show-list/show-list.component';
 const routes: Routes = [
   {
     path: '', redirectTo: '/home', pathMatch: 'full' 
@@ -15,12 +14,12 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () =>
-      import('./registration/registration.module').then(m => m.RegistrationModule)
+      import('../registration/registration.module').then(m => m.RegistrationModule)
   },
   {
     path: 'booking',
     loadChildren: () =>
-      import('./booking/booking.module').then(m => m.BookingModule)
+      import('../booking/booking.module').then(m => m.BookingModule)
   },
   { path: 'restaurants', component: ShowListComponent } 
 ];

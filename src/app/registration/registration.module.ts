@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { User } from './model/user-model'; 
 
 
 import { RegistrationRoutingModule } from './registration-routing.module';

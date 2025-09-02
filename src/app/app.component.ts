@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'RestroProj';
 
   constructor(registerService : RegisterService){
-    registerService.sample();
+       
   }
 }

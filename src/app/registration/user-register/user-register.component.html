@@ -33,6 +33,17 @@
   </div>
   <br/>
 
+  <label for="confirmPassword">Confirm Password</label>
+    <input id="confirmPassword" name="confirmPassword" type="password" maxlength="30" placeholder="Confirm Password" ngModel required minlength="6" #confirmPassword="ngModel"/>
+    <div *ngIf="confirmPassword.invalid && confirmPassword.touched" style="color: red; font-size: 0.95em;">
+      <span *ngIf="confirmPassword.errors?.['required']">Confirm Password is required.</span>
+      <span *ngIf="confirmPassword.errors?.['minlength']">Password must be at least 6 characters.</span>
+    </div>
+    <div *ngIf="userForm.controls['password']?.value !== userForm.controls['confirmPassword']?.value && confirmPassword.touched" style="color: red; font-size: 0.95em;">
+      <span>Passwords do not match.</span>
+    </div>
+    <br/>
+
   <button type="submit" [disabled]="userForm.invalid">Register</button>
 </form>
 </div>
