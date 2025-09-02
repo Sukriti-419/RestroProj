@@ -1,0 +1,54 @@
+<div class="booking-container">
+  <div class="booking-form-section">
+    <form [formGroup]="bookingDetails" (ngSubmit)="onBook()" class="booking-form">
+      <h1 style="text-align: center;">Book a Table</h1>
+      <label>Email</label>
+      <input id="email" type="text" formControlName="email" />
+      <br/>
+
+
+      <label>Restaurant Name</label>
+      <input id="restaurant" type="text" formControlName="restaurantName" />
+      <br/>
+
+      <label>Booking Date</label>
+      <input id="bdate" type="date" formControlName="bookingDate" />
+      <br/>
+
+      <label>Booking Time</label>
+      <input id="btime" type="time" formControlName="bookingTime" />
+      <br/>
+
+        <div *ngIf="bookingDetails.controls['bookingTime'].value && !isTimeValid()" style="color: red;">
+        Booking time must be between {{ openTime }} and {{ closeTime }}.
+        </div>
+
+      <label>No. Of People</label>
+      <input id="people" type="number" formControlName="people" min="1" required />
+      <br/>
+
+      <button type="submit" [disabled]="bookingDetails.invalid">Book</button>
+    </form>
+  </div>
+  <div class="booking-image-section">
+   <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Restaurant" />
+  </div>
+</div>
+
+<div class="booking-history-section">
+  <h2>Your Booking History</h2>
+  <div class="booking-cards-list">
+    <div *ngFor="let booking of bookings; let i = index" class="booking-card">
+      <h3>Booking Details</h3>
+      <div class="booking-info">
+        <p><strong>Restaurant:</strong> {{ booking.restaurantName }}</p>
+        <p><strong>Date:</strong> {{ booking.bookingDate }}</p>
+        <p><strong>Time:</strong> {{ booking.bookingTime }}</p>
+        <p><strong>People:</strong> {{ booking.people }}</p>
+        <p><strong>Email:</strong> {{ booking.email }}</p>
+      </div>
+      <button [disabled]="cancelDisabled" (click)="cancelBooking(i)" class="cancel-btn">Cancel</button>
+      <span *ngIf="cancelDisabled" style="color: red;">Cancel disabled after 60 seconds</span>
+    </div>
+  </div>
+</div>

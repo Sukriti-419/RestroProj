@@ -1,0 +1,70 @@
+.container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 36px 32px 24px 32px;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.registration-form label {
+  color: #d32f2f;
+  font-weight: 600;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.registration-form input {
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fafafa;
+  color: #222;
+  transition: border 0.2s;
+  margin-bottom: 8px;
+}
+
+.registration-form input:focus {
+  border: 2px solid #ca1e1e;
+  outline: none;
+  background: #fff;
+}
+
+.registration-form button {
+  margin-top: 18px;
+  padding: 14px;
+  background: #df2706;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(255,77,0,0.12);
+  transition: background 0.2s;
+}
+
+.registration-form button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}

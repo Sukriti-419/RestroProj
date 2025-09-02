@@ -1,0 +1,12 @@
+<div class="restaurant-list">
+  <div class="restaurant-card" *ngFor="let r of restaurants">
+    <img [src]="r.image" alt="{{ r.name }}" class="restaurant-img" />
+    <h3>{{ r.name }}</h3>
+    <p>{{ r.cuisine }}</p>
+    <span class="restaurant-address">{{ r.address }}</span>
+    <span class="restaurant-time">
+      Open: {{ r.opentime }} | Close: {{ r.closetime }}
+    </span>
+    <button class="book-btn" (click)="bookRestaurant(r)">Book</button>
+  </div>
+</div>
